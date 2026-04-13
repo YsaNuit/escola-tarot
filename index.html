@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Garanta sua vaga na Escola de Tarot Ysa Nuit com condições exclusivas pós-imersão: R$1.563 em bônus + acesso vitalício. Oferta encerra em 24h.">
+  <meta property="og:title" content="Escola de Tarot Ysa Nuit — Condições Especiais Pós-Imersão">
+  <meta property="og:description" content="Garanta agora com R$1.563 em bônus, atendimento comigo no Ateliê e acesso vitalício. Oferta disponível por tempo limitado.">
+  <meta property="og:type" content="website">
+  <title>Escola de Tarot Ysa Nuit — Condições Especiais Pós-Imersão</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== DESIGN SYSTEM — YSA NUIT PALETTE ===== */
+    :root {
+      --cor-primaria: #9B6FD4;
+      --cor-secundaria: #C4A35A;
+      --cor-fundo: #0d0b12;
+      --cor-fundo-alt: #15101f;
+      --cor-fundo-card: #1c1429;
+      --cor-texto: #f0eaf8;
+      --cor-texto-suave: #b8a8d0;
+      --cor-cta: #C4A35A;
+      --cor-cta-hover: #d4b46a;
+      --cor-destaque: #C4A35A;
+      --cor-urgencia: #e05c5c;
+      --cor-roxo-claro: #b88fe0;
+
+      --fonte-titulo: 'Montserrat', sans-serif;
+      --fonte-corpo: 'Montserrat', sans-serif;
+
+      --raio-borda: 14px;
+      --sombra-card: 0 4px 24px rgba(0,0,0,0.35);
+      --sombra-forte: 0 8px 40px rgba(0,0,0,0.5);
+
+      --max-width: 900px;
+      --padding-secao: 80px 20px;
+      --padding-secao-mobile: 52px 20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--fonte-corpo);
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== ANIMAÇÕES ===== */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(196,163,90,0.5); }
+      50% { box-shadow: 0 0 0 14px rgba(196,163,90,0); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes blobMove {
+      0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+      50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    }
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+    @keyframes countdownPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+      will-change: transform, opacity;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0; transform: translateX(-28px);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale {
+      opacity: 0; transform: scale(0.93);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+    /* ===== STICKY CTA BAR ===== */
+    #sticky-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: linear-gradient(90deg, #1a0f2e, #0d0b12);
+      border-bottom: 1px solid rgba(196,163,90,0.3);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease;
+      flex-wrap: wrap;
+    }
+    #sticky-bar.visible { transform: translateY(0); }
+    #sticky-bar span { font-size: 0.85rem; color: var(--cor-texto-suave); }
+    #sticky-bar .btn-sticky {
+      background: var(--cor-cta);
+      color: #1a0f2e;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 8px 18px;
+      border-radius: 8px;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    #sticky-bar .btn-sticky:hover { background: var(--cor-cta-hover); }
+
+    /* ===== BOTÃO CTA ===== */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(90deg, #C4A35A 0%, #d4b46a 50%, #C4A35A 100%);
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite, ctaPulse 2.5s ease-in-out infinite;
+      color: #1a0f2e;
+      font-family: var(--fonte-corpo);
+      font-weight: 800;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      padding: 18px 36px;
+      border-radius: var(--raio-borda);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-align: center;
+      white-space: nowrap;
+      width: fit-content;
+    }
+    .btn-cta:hover { transform: translateY(-2px); }
+    @media (max-width: 480px) {
+      .btn-cta { width: 100%; max-width: 360px; margin: 0 auto; white-space: normal; font-size: 0.95rem; padding: 16px 24px; }
+    }
+
+    /* ===== GLASSMORPHISM ===== */
+    .glass-card {
+      background: rgba(155,111,212,0.07);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(155,111,212,0.2);
+      border-radius: var(--raio-borda);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(13,11,18,1) 0%, rgba(13,11,18,0) 100%);
+    }
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--cor-secundaria);
+    }
+    .logo-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cor-texto-suave);
+      margin-top: 2px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 60px 20px 80px;
+      text-align: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 0%, rgba(155,111,212,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse at 80% 80%, rgba(196,163,90,0.1) 0%, transparent 60%),
+                  var(--cor-fundo);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(196,163,90,0.15);
+      border: 1px solid rgba(196,163,90,0.4);
+      color: var(--cor-secundaria);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--cor-texto);
+      margin-bottom: 20px;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 span { color: var(--cor-primaria); }
+    .hero h1 .gold { color: var(--cor-secundaria); }
+    .hero .subheadline {
+      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      color: var(--cor-texto-suave);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .hero-micro { font-size: 0.78rem; color: var(--cor-texto-suave); opacity: 0.7; }
+
+    /* Estrelas decorativas */
+    .star {
+      position: absolute;
+      width: 3px; height: 3px;
+      background: var(--cor-secundaria);
+      border-radius: 50%;
+    }
+
+    /* ===== URGÊNCIA / COUNTDOWN ===== */
+    .urgencia-banner {
+      background: linear-gradient(135deg, rgba(224,92,92,0.15), rgba(155,111,212,0.15));
+      border: 1px solid rgba(224,92,92,0.4);
+      border-radius: var(--raio-borda);
+      padding: 24px 28px;
+      text-align: center;
+      margin: 0 auto 20px;
+      max-width: 680px;
+    }
+    .urgencia-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #e05c5c;
+      margin-bottom: 10px;
+    }
+    .urgencia-titulo {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 800;
+      color: var(--cor-texto);
+      margin-bottom: 16px;
+    }
+    .countdown-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .countdown-block {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(224,92,92,0.3);
+      border-radius: 10px;
+      padding: 12px 18px;
+      min-width: 72px;
+      animation: countdownPulse 2s ease-in-out infinite;
+    }
+    .countdown-num {
+      display: block;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      font-weight: 900;
+      color: #e05c5c;
+      line-height: 1;
+    }
+    .countdown-label {
+      display: block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cor-texto-suave);
+      margin-top: 4px;
+    }
+    .urgencia-aviso {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--cor-texto-suave);
+    }
+    .urgencia-aviso strong { color: #e05c5c; }
+
+    /* ===== SEÇÃO GENÉRICA ===== */
+    section { padding: var(--padding-secao-mobile); }
+    @media (min-width: 768px) { section { padding: var(--padding-secao); } }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cor-secundaria);
+      margin-bottom: 10px;
+    }
+    h2.section-title {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--cor-texto);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      color: var(--cor-texto-suave);
+      font-size: 1rem;
+      max-width: 580px;
+      margin-bottom: 40px;
+    }
+
+    /* ===== PROBLEMA — DOR ===== */
+    .dor-section {
+      background: linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-fundo-alt) 100%);
+    }
+    .dor-list { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 640px; }
+    .dor-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      background: rgba(224,92,92,0.07);
+      border: 1px solid rgba(224,92,92,0.2);
+      border-radius: 10px;
+      font-size: 0.98rem;
+      color: var(--cor-texto-suave);
+    }
+    .dor-icon { flex-shrink: 0; color: #e05c5c; margin-top: 2px; }
+
+    /* ===== SOLUÇÃO ===== */
+    .solucao-box {
+      background: linear-gradient(135deg, rgba(155,111,212,0.12), rgba(196,163,90,0.08));
+      border: 1px solid rgba(155,111,212,0.3);
+      border-radius: var(--raio-borda);
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .solucao-box h3 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 900;
+      color: var(--cor-texto);
+      margin-bottom: 16px;
+    }
+    .solucao-box h3 span { color: var(--cor-primaria); }
+    .solucao-box p { color: var(--cor-texto-suave); line-height: 1.7; }
+
+    /* ===== MÉTODO ===== */
+    .metodo-section { background: var(--cor-fundo-alt); }
+    .steps { display: flex; flex-direction: column; gap: 20px; max-width: 640px; }
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 22px 24px;
+      background: var(--cor-fundo-card);
+      border-radius: var(--raio-borda);
+      border-left: 3px solid var(--cor-primaria);
+    }
+    .step-num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--cor-primaria);
+      opacity: 0.5;
+      flex-shrink: 0;
+      line-height: 1;
+      min-width: 32px;
+    }
+    .step h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--cor-texto); }
+    .step p { font-size: 0.9rem; color: var(--cor-texto-suave); }
+
+    /* ===== BÔNUS / OFERTA ===== */
+    .oferta-section { background: var(--cor-fundo); }
+    .bonus-total {
+      display: inline-block;
+      background: rgba(196,163,90,0.12);
+      border: 1px solid rgba(196,163,90,0.35);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 0.82rem;
+      color: var(--cor-secundaria);
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .bonus-grid { display: flex; flex-direction: column; gap: 14px; max-width: 680px; }
+    .bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--cor-fundo-card);
+      border-radius: 12px;
+      border: 1px solid rgba(155,111,212,0.15);
+    }
+    .bonus-item.destaque {
+      border-color: rgba(196,163,90,0.4);
+      background: linear-gradient(135deg, rgba(196,163,90,0.08), rgba(155,111,212,0.06));
+    }
+    .bonus-check { flex-shrink: 0; color: var(--cor-primaria); margin-top: 2px; }
+    .bonus-check.gold { color: var(--cor-secundaria); }
+    .bonus-info { flex: 1; }
+    .bonus-nome { font-weight: 700; font-size: 0.98rem; color: var(--cor-texto); margin-bottom: 2px; }
+    .bonus-nome.gold { color: var(--cor-secundaria); }
+    .bonus-valor { font-size: 0.78rem; color: var(--cor-texto-suave); }
+    .bonus-tag-vitalicio {
+      display: inline-block;
+      background: rgba(196,163,90,0.15);
+      color: var(--cor-secundaria);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-left: 8px;
+    }
+    .bonus-aviso {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: rgba(224,92,92,0.08);
+      border: 1px solid rgba(224,92,92,0.25);
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: var(--cor-texto-suave);
+      max-width: 680px;
+    }
+    .bonus-aviso strong { color: #e05c5c; }
+
+    /* ===== QUEM É / NÃO É ===== */
+    .para-quem-section { background: var(--cor-fundo-alt); }
+    .para-quem-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 720px;
+    }
+    @media (min-width: 640px) {
+      .para-quem-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .para-quem-col { border-radius: var(--raio-borda); padding: 24px; }
+    .para-quem-col.sim {
+      background: rgba(155,111,212,0.08);
+      border: 1px solid rgba(155,111,212,0.25);
+    }
+    .para-quem-col.nao {
+      background: rgba(224,92,92,0.06);
+      border: 1px solid rgba(224,92,92,0.2);
+    }
+    .para-quem-col h4 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+    .para-quem-col.sim h4 { color: var(--cor-primaria); }
+    .para-quem-col.nao h4 { color: #e05c5c; }
+    .para-quem-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .para-quem-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: var(--cor-texto-suave);
+    }
+    .pq-icon { flex-shrink: 0; margin-top: 2px; }
+
+    /* ===== PREÇO ===== */
+    .preco-section { background: var(--cor-fundo); }
+    .preco-box {
+      background: linear-gradient(135deg, rgba(155,111,212,0.1), rgba(196,163,90,0.08));
+      border: 1px solid rgba(196,163,90,0.3);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+    .preco-valor-total {
+      font-size: 0.85rem;
+      color: var(--cor-texto-suave);
+      margin-bottom: 8px;
+    }
+    .preco-riscado {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--cor-texto-suave);
+      text-decoration: line-through;
+      opacity: 0.6;
+      margin-bottom: 16px;
+    }
+    .preco-parcela {
+      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      font-weight: 900;
+      color: var(--cor-secundaria);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .preco-parcela span { font-size: 1.2rem; font-weight: 600; }
+    .preco-avista {
+      font-size: 1.1rem;
+      color: var(--cor-texto-suave);
+      margin-bottom: 24px;
+    }
+    .preco-avista strong { color: var(--cor-texto); }
+    .preco-pix {
+      font-size: 0.88rem;
+      color: var(--cor-texto-suave);
+      margin-bottom: 28px;
+      padding: 10px 16px;
+      background: rgba(155,111,212,0.08);
+      border-radius: 8px;
+      border: 1px solid rgba(155,111,212,0.15);
+    }
+    .preco-pix strong { color: var(--cor-primaria); }
+    .preco-facilidades { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+    .preco-facilidades li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.88rem;
+      color: var(--cor-texto-suave);
+    }
+    .preco-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .preco-seguro { font-size: 0.75rem; color: var(--cor-texto-suave); opacity: 0.6; }
+
+    /* ===== FAQ ===== */
+    .faq-section { background: var(--cor-fundo-alt); }
+    .faq-list { max-width: 680px; }
+    .faq-item { border-bottom: 1px solid rgba(155,111,212,0.15); }
+    .faq-pergunta {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--cor-texto);
+      font-family: var(--fonte-corpo);
+      font-size: 0.98rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-resposta {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      color: var(--cor-texto-suave);
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+    .faq-item.open .faq-resposta { max-height: 300px; padding-bottom: 20px; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.3s; font-size: 1.5rem; color: var(--cor-primaria); flex-shrink: 0; }
+
+    /* ===== FECHAMENTO ===== */
+    .fechamento-section {
+      background: linear-gradient(135deg, rgba(155,111,212,0.15), rgba(196,163,90,0.08));
+      border-top: 1px solid rgba(155,111,212,0.2);
+      text-align: center;
+    }
+    .fechamento-section h2 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: var(--cor-texto);
+      margin-bottom: 16px;
+    }
+    .fechamento-section h2 span { color: var(--cor-primaria); }
+    .fechamento-section p { color: var(--cor-texto-suave); max-width: 540px; margin: 0 auto 36px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--cor-fundo);
+      border-top: 1px solid rgba(155,111,212,0.1);
+      padding: 32px 20px;
+      text-align: center;
+    }
+    .social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 20px; }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(155,111,212,0.12);
+      border: 1px solid rgba(155,111,212,0.25);
+      color: var(--cor-texto-suave);
+      transition: background 0.2s, color 0.2s;
+    }
+    .social-link:hover { background: rgba(155,111,212,0.25); color: var(--cor-texto); }
+    .footer-text { font-size: 0.8rem; color: var(--cor-texto-suave); opacity: 0.5; }
+
+    /* ===== BLOBS DECORATIVOS ===== */
+    .blob-deco {
+      position: absolute;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      animation: blobMove 10s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; }
+
+    /* ===== COUNTDOWN URGÊNCIA SEÇÃO ===== */
+    .urgencia-section {
+      background: var(--cor-fundo);
+      padding: 0 20px 52px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div id="sticky-bar">
+  <span>⏳ Oferta com bônus exclusivos encerra em breve</span>
+  <a href="https://pay.herospark.com/escola-de-tarot-ysa-nuit-494468" target="_blank" class="btn-sticky">
+    Garantir Minha Vaga
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-text">✦ Ysa Nuit ✦</div>
+  <div class="logo-sub">Escola de Tarot</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Blobs decorativos -->
+  <div class="blob-deco" style="top:-80px;right:-60px;width:320px;height:320px;opacity:0.08;background:var(--cor-primaria);"></div>
+  <div class="blob-deco" style="bottom:-60px;left:-80px;width:260px;height:260px;opacity:0.06;background:var(--cor-secundaria);animation-delay:2s;"></div>
+
+  <!-- Estrelas -->
+  <div class="star" style="top:15%;left:8%;animation:starTwinkle 2.5s infinite;"></div>
+  <div class="star" style="top:20%;right:12%;animation:starTwinkle 3.5s infinite 0.5s;"></div>
+  <div class="star" style="top:60%;left:5%;animation:starTwinkle 4s infinite 1s;"></div>
+  <div class="star" style="top:40%;right:6%;animation:starTwinkle 3s infinite 1.5s;"></div>
+  <div class="star" style="top:80%;right:15%;animation:starTwinkle 2.8s infinite 0.8s;"></div>
+
+  <div class="hero-content container">
+    <div class="hero-tag reveal">✦ Condições Especiais Pós-Imersão ✦</div>
+    <h1 class="reveal">
+      Você saiu da imersão diferente.<br>
+      Agora é hora de <span>continuar</span> essa <span class="gold">jornada</span>.
+    </h1>
+    <p class="subheadline reveal">
+      Entre para a Escola de Tarot Ysa Nuit com R$&nbsp;1.563 em bônus exclusivos — incluindo atendimento comigo e acesso vitalício. Disponível só por tempo limitado.
+    </p>
+    <div class="hero-cta-wrap reveal">
+      <a href="https://pay.herospark.com/escola-de-tarot-ysa-nuit-494468" target="_blank" class="btn-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Quero Garantir Minha Vaga
+      </a>
+      <span class="hero-micro">Cartão, Pix parcelado ou parcelamento inteligente</span>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN URGÊNCIA -->
+<div class="urgencia-section">
+  <div class="container">
+    <div class="urgencia-banner reveal">
+      <div class="urgencia-label">⚠ Atenção — Oferta Sensível ao Tempo</div>
+      <div class="urgencia-titulo">O atendimento comigo e o acesso vitalício saem desta oferta em:</div>
+      <div class="countdown-wrap">
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-horas">00</span>
+          <span class="countdown-label">horas</span>
+        </div>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-minutos">00</span>
+          <span class="countdown-label">min</span>
+        </div>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-segundos">00</span>
+          <span class="countdown-label">seg</span>
+        </div>
+      </div>
+      <p class="urgencia-aviso">
+        Prazo: <strong>segunda-feira, 13 de abril às 23h59</strong><br>
+        Depois disso: acesso cai para 3 anos e o bônus de atendimento é removido.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- DOBRA 2: DOR -->
+<section class="dor-section">
+  <div class="container">
+    <p class="section-tag reveal">Eu sei como você se sente</p>
+    <h2 class="section-title reveal">Você estuda Tarot, mas ainda sente que algo está faltando?</h2>
+    <ul class="dor-list stagger">
+      <li class="dor-item">
+        <span class="dor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </span>
+        Você decora os significados, mas na hora de ler trava e não sabe o que dizer
+      </li>
+      <li class="dor-item">
+        <span class="dor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </span>
+        Sente que falta confiança para atender — mesmo depois de meses estudando
+      </li>
+      <li class="dor-item">
+        <span class="dor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </span>
+        As cartas saem mas a leitura não flui — parece um relatório, não uma conversa
+      </li>
+      <li class="dor-item">
+        <span class="dor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </span>
+        Você quer uma prática integrativa, não só mais um curso de palavras-chave
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- DOBRA 4: SOLUÇÃO -->
+<section style="background: var(--cor-fundo-alt);">
+  <div class="container">
+    <div class="solucao-box reveal">
+      <p class="section-tag" style="margin-bottom:16px;">A solução está aqui</p>
+      <h3>A <span>Escola de Tarot Ysa Nuit</span> ensina você a ler como fala</h3>
+      <p style="margin-top:16px;">
+        Não é sobre mais significados para memorizar. É sobre aprender a <strong>dialogar com as cartas</strong> — de forma intuitiva, terapêutica e autoral. Um método que integra tarot, psicologia transpessoal e criatividade para você desenvolver uma leitura que é genuinamente sua.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 5: MÉTODO -->
+<section class="metodo-section">
+  <div class="container">
+    <p class="section-tag reveal">Como funciona</p>
+    <h2 class="section-title reveal">O Método Diálogo com as Cartas</h2>
+    <p class="section-sub reveal">Três pilares que transformam como você lê e como você se relaciona com o tarot.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-num">01</span>
+        <div>
+          <h4>Linguagem antes de significado</h4>
+          <p>Você aprende a criar uma conversa viva com as cartas — sem depender de listas e palavras-chave decoradas.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <span class="step-num">02</span>
+        <div>
+          <h4>Tarot como ferramenta terapêutica</h4>
+          <p>Integração com Terapia Criativa Transpessoal para leituras que acolhem, curam e transformam — não só informam.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <span class="step-num">03</span>
+        <div>
+          <h4>Prática real e acompanhada</h4>
+          <p>Ateliês ao vivo, caderno de atividades e comunidade ativa para você construir confiança com suporte de verdade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 8: OFERTA / BÔNUS -->
+<section class="oferta-section">
+  <div class="container">
+    <p class="section-tag reveal">Tudo que você recebe</p>
+    <h2 class="section-title reveal">O que entra na sua Escola de Tarot agora</h2>
+    <div class="bonus-total reveal">✦ Valor total dos bônus: R$ 1.563,00 ✦</div>
+
+    <div class="bonus-grid stagger">
+
+      <div class="bonus-item">
+        <span class="bonus-check">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome">Método Diálogo com as Cartas</div>
+          <div class="bonus-valor">Valor: R$ 147</div>
+        </div>
+      </div>
+
+      <div class="bonus-item">
+        <span class="bonus-check">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome">Curso de Terapia Criativa Transpessoal</div>
+          <div class="bonus-valor">Valor: R$ 457</div>
+        </div>
+      </div>
+
+      <div class="bonus-item">
+        <span class="bonus-check">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome">Curso de Tarot Terapêutico</div>
+          <div class="bonus-valor">Valor: R$ 297</div>
+        </div>
+      </div>
+
+      <div class="bonus-item">
+        <span class="bonus-check">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome">Guia das Cartas Combinadas + Apostilas de amor e dinheiro</div>
+          <div class="bonus-valor">Valor: R$ 97</div>
+        </div>
+      </div>
+
+      <div class="bonus-item">
+        <span class="bonus-check">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome">Tickets de ouvinte nos Ateliês de 2026</div>
+          <div class="bonus-valor">Valor: R$ 111</div>
+        </div>
+      </div>
+
+      <div class="bonus-item">
+        <span class="bonus-check">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome">Caderno de Atividades do Tarot</div>
+          <div class="bonus-valor">Valor: R$ 77</div>
+        </div>
+      </div>
+
+      <!-- BÔNUS EXCLUSIVOS 24H -->
+      <div class="bonus-item destaque">
+        <span class="bonus-check gold">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome gold">
+            Atendimento de Tarot comigo no Ateliê
+            <span class="bonus-tag-vitalicio">⏳ Só até 13/04</span>
+          </div>
+          <div class="bonus-valor">Valor: R$ 377 — Bônus exclusivo para quem entrar nas próximas horas</div>
+        </div>
+      </div>
+
+      <div class="bonus-item destaque">
+        <span class="bonus-check gold">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </span>
+        <div class="bonus-info">
+          <div class="bonus-nome gold">
+            Acesso Vitalício
+            <span class="bonus-tag-vitalicio">⏳ Só até 13/04</span>
+          </div>
+          <div class="bonus-valor">Após o prazo, o acesso passa a ser de 3 anos</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bonus-aviso reveal">
+      <strong>⚠ O que muda depois de 13/04 às 23h59:</strong><br>
+      O bônus de atendimento de Tarot comigo é removido e o acesso deixa de ser vitalício (passa para 3 anos).<br><br>
+      <strong>Os demais bônus permanecem até 18 de abril às 23h59.</strong> Depois disso, as condições especiais se encerram completamente.
+    </div>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://pay.herospark.com/escola-de-tarot-ysa-nuit-494468" target="_blank" class="btn-cta reveal">
+        Garantir Agora com Todos os Bônus
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 15: PARA QUEM É -->
+<section class="para-quem-section">
+  <div class="container">
+    <p class="section-tag reveal">Isso é para você?</p>
+    <h2 class="section-title reveal">A Escola é para você se...</h2>
+    <div class="para-quem-grid" style="margin-top:28px;">
+      <div class="para-quem-col sim reveal">
+        <h4>✓ É para você</h4>
+        <ul class="para-quem-list">
+          <li>
+            <span class="pq-icon" style="color:var(--cor-primaria);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Você estuda tarot mas quer desenvolver uma leitura que seja sua
+          </li>
+          <li>
+            <span class="pq-icon" style="color:var(--cor-primaria);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Quer usar o tarot de forma integrativa e terapêutica
+          </li>
+          <li>
+            <span class="pq-icon" style="color:var(--cor-primaria);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Busca confiança para atender — para si mesma ou para outras pessoas
+          </li>
+          <li>
+            <span class="pq-icon" style="color:var(--cor-primaria);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Quer uma comunidade de prática real, não só conteúdo gravado
+          </li>
+        </ul>
+      </div>
+      <div class="para-quem-col nao reveal">
+        <h4>✗ Não é para você</h4>
+        <ul class="para-quem-list">
+          <li>
+            <span class="pq-icon" style="color:#e05c5c;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            Busca um método rígido de palavras-chave e significados fixos
+          </li>
+          <li>
+            <span class="pq-icon" style="color:#e05c5c;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            Não está disposta a se envolver com a prática criativa e terapêutica
+          </li>
+          <li>
+            <span class="pq-icon" style="color:#e05c5c;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            Quer resultados sem se dedicar à jornada de autoconhecimento
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 12+13: PREÇO + CTA -->
+<section class="preco-section">
+  <div class="container" style="text-align:center;">
+    <p class="section-tag reveal">Seu investimento</p>
+    <h2 class="section-title reveal">A melhor oportunidade do ano para entrar na Escola</h2>
+
+    <div class="preco-box reveal-scale">
+      <div class="preco-valor-total">Valor total da oferta</div>
+      <div class="preco-riscado">R$ 1.563,00</div>
+
+      <div class="preco-parcela">
+        <span>12x de</span><br>
+        R$ 103,10
+      </div>
+      <div class="preco-avista">ou <strong>R$ 997,00 à vista</strong> no cartão</div>
+
+      <div class="preco-pix">
+        <strong>Parcelamento por Pix:</strong> 12x de R$ 83,08
+      </div>
+
+      <ul class="preco-facilidades" style="text-align:left;">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cor-primaria)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Pode pagar em mais de um cartão de crédito
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cor-primaria)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Parcelamento inteligente disponível
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cor-primaria)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Parcelamento via Pix (para quem não tem cartão)
+        </li>
+      </ul>
+
+      <div class="preco-cta-wrap">
+        <a href="https://pay.herospark.com/escola-de-tarot-ysa-nuit-494468" target="_blank" class="btn-cta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Garantir Minha Vaga Agora
+        </a>
+        <span class="preco-seguro">🔒 Ambiente seguro • Múltiplas formas de pagamento</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 14: FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <p class="section-tag reveal">Dúvidas</p>
+    <h2 class="section-title reveal">Perguntas Frequentes</h2>
+    <div class="faq-list reveal" style="margin-top:28px;">
+
+      <div class="faq-item">
+        <button class="faq-pergunta">
+          Preciso ter experiência com Tarot para entrar?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-resposta"><p>Não. A Escola foi criada para quem já tem algum contato com o Tarot e quer aprofundar — seja para uso pessoal ou para atender outras pessoas. Se você saiu da imersão, já tem a base necessária para aproveitar tudo.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">
+          O que é acesso vitalício, na prática?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-resposta"><p>Significa que você acessa os materiais para sempre, sem prazo de expiração. Após o encerramento desta oferta, o acesso passa a ser de 3 anos — ainda muito acesso, mas não é o mesmo que vitalício.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">
+          Como funciona o atendimento de Tarot comigo no Ateliê?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-resposta"><p>É um atendimento individual comigo, a Ysa, realizado presencialmente no Ateliê. Os detalhes de agendamento são combinados após a entrada na Escola. Esse bônus é exclusivo para quem entrar até 13/04 às 23h59.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">
+          Posso parcelar sem ter cartão de crédito?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-resposta"><p>Sim! Há a opção de parcelamento via Pix em até 12x de R$&nbsp;83,08. Na página de checkout, você escolhe a modalidade que funciona melhor para o seu cenário.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">
+          E se eu não gostar? Tem garantia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-resposta"><p>Sim. A plataforma HeroSpark garante o prazo legal de 7 dias após a compra para solicitar reembolso, sem precisar se justificar. Você entra sem risco.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">
+          Os outros bônus ficam por quanto tempo?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-resposta"><p>Os cursos, guias, apostilas, caderno e tickets dos ateliês permanecem na oferta até <strong>18 de abril às 23h59</strong>. Depois dessa data, as condições especiais se encerram completamente.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 16: FECHAMENTO -->
+<section class="fechamento-section">
+  <div class="container">
+    <p class="section-tag" style="margin-bottom:16px;">✦ É agora ou nunca ✦</p>
+    <h2>Você veio até aqui por alguma razão.<br><span>Não deixe essa chance passar.</span></h2>
+    <p style="margin-top:16px;">
+      A imersão foi o começo. A Escola é onde a transformação se aprofunda — com método, com prática e com uma comunidade que caminha junto. Com todos os bônus exclusivos ainda disponíveis.
+    </p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <a href="https://pay.herospark.com/escola-de-tarot-ysa-nuit-494468" target="_blank" class="btn-cta reveal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Entrar para a Escola Agora
+      </a>
+      <span style="font-size:0.78rem;color:var(--cor-texto-suave);opacity:0.6;">Oferta com bônus máximos encerra em 13/04 às 23h59</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://instagram.com/ysanuit" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+    <p class="footer-text">Escola de Tarot Ysa Nuit • ysanuit</p>
+    <p class="footer-text" style="margin-top:6px;">© 2026 — Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script>
+  // ===== SCROLL REVEAL =====
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll(':scope > *').forEach((child, i) => {
+          setTimeout(() => child.classList.add('visible'), i * 80);
+        });
+        staggerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.stagger').forEach(el => staggerObserver.observe(el));
+
+  // ===== STICKY BAR =====
+  const stickyBar = document.getElementById('sticky-bar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) stickyBar.classList.add('visible');
+    else stickyBar.classList.remove('visible');
+  });
+
+  // ===== FAQ =====
+  document.querySelectorAll('.faq-pergunta').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ===== COUNTDOWN — 13/04/2026 às 23:59 =====
+  function updateCountdown() {
+    const target = new Date('2026-04-13T23:59:00');
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById('cd-horas').textContent = '00';
+      document.getElementById('cd-minutos').textContent = '00';
+      document.getElementById('cd-segundos').textContent = '00';
+      return;
+    }
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+
+    document.getElementById('cd-horas').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-minutos').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-segundos').textContent = String(s).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
